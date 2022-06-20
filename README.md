@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # p2-project-beer-buddy
 Flatiron Phase 2 Project - Beer Buddy App - jmacapagal, hkassow, dyang
 
@@ -7,6 +8,9 @@ This is the README for our Phase 2 project, Beer Buddy, a SPA dedicated to brows
 
 =======
 # Getting Started with Create React App
+=======
+c# Getting Started with Create React App
+>>>>>>> 7cd1f06 (test)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
