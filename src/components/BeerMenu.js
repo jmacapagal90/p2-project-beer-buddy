@@ -1,8 +1,19 @@
 import React from "react";
+import BeerCard from "./BeerCard";
+import { Card } from "semantic-ui-react";
 
 function BeerMenu(){
     return (
-        <h1>BeerMenu</h1>
+        <Card.Group itemsPerRow={4}>
+            <BeerCard/>
+            <BeerCard/>
+            <BeerCard/>
+            <BeerCard/>
+            <BeerCard/>
+            <BeerCard/>
+            <BeerCard/>
+            <BeerCard/>
+        </Card.Group>
     )
 }
 
