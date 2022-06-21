@@ -1,12 +1,19 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart,FaTrash } from "react-icons/fa";
 
 
-function BeerCard({ beer }){
+function BeerCard({ beer, addToCart }){
 
-function handleClick(e) {
-  console.log(e.target.parentNode.parentNode)
+function handleClick() {
+  const beerObj = {
+    name: beer.name,
+    image: beer.image,
+    price: beer.price,
+    average: beer.rating.average
+  }
+  console.log(beerObj)
+  addToCart(beerObj)
 }
 
     return (
@@ -19,6 +26,7 @@ function handleClick(e) {
         </div>
         <div className="extra content">
           <button onClick={handleClick}><FaShoppingCart/></button>
+          <button><FaTrash/></button>
           <span>
             <i className="icon heartbeat red" />
             Rating: {Math.round(beer.rating.average * 10)/ 10}
