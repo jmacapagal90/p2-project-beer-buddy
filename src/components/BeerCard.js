@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
+import { FaShoppingCart } from "react-icons/fa";
+
 
 function BeerCard({ beer }){
 
@@ -16,7 +18,7 @@ function handleClick(e) {
           <div className="header">{beer.name}</div>
         </div>
         <div className="extra content">
-          <button onClick={handleClick}>Add to Cart</button>
+          <button onClick={handleClick}><FaShoppingCart/></button>
           <span>
             <i className="icon heartbeat red" />
             Rating: {Math.round(beer.rating.average * 10)/ 10}
