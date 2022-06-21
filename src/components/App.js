@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
-import Home from './Home';
+import Beers from './Beers';
 import NavBar from './NavBar';
 import Checkout from './Checkout';
+import Home from './Home';
 
 function App() {
 
@@ -25,10 +26,13 @@ const searchResults = beers.filter((beer) => {
         <NavBar/>
       </header>
         <Switch>
-          <Route path="/">
-            <Home beers={searchResults} setSearchQuery={setSearchQuery}/>
+          <Route exact path="/">
+            <Home />
           </Route>
-          <Route path="/checkout">
+          <Route exact path="/beers">
+            <Beers beers={searchResults} setSearchQuery={setSearchQuery}/>
+          </Route>
+          <Route exact path="/checkout">
             <Checkout />
           </Route>
         </Switch>
