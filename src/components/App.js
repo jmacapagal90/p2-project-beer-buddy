@@ -7,13 +7,16 @@ import Home from './Home';
 
 function App() {
 
-const [beers, setBeers] = useState([])
-const [searchQuery, setSearchQuery] = useState("")
+const [beers, setBeers] = useState([]);
+const [searchQuery, setSearchQuery] = useState("");
+const [cart,setCart] = useState([]);
 
-
-function addToCart(card) {
-  
+function addToCart(beerObj) {
+  setCart([...cart,beerObj]);
+  console.log(beerObj)
 }
+
+console.log(cart)
 
 useEffect(() => {
   fetch("https://api.sampleapis.com/beers/ale")
@@ -35,10 +38,10 @@ const searchResults = beers.filter((beer) => {
             <Home />
           </Route>
           <Route exact path="/beers">
-            <Beers beers={searchResults} setSearchQuery={setSearchQuery}/>
+            <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout />
+            <Checkout cart={cart}/>
           </Route>
         </Switch>
     </div>
