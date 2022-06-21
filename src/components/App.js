@@ -1,23 +1,24 @@
 import { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Home from './Home';
-import BeerMenu from './BeerMenu';
-import LoginPage from './LoginPage'
+import NavBar from './NavBar';
+import Checkout from './Checkout';
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" >
+        <NavBar/>
+      </header>
         <Switch>
           <Route path="/">
             <Home />
           </Route>
-          <Route path="/">
-            <BeerMenu />
+          <Route path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
-      </header>
     </div>
   );
 }

@@ -1,11 +1,10 @@
-import NavBar from './NavBar';
 import BeerMenu from './BeerMenu';
+import Checkout from './Checkout';
 
 function Home(){
 
     return (
         <>
-        <NavBar />
         <BeerMenu />
         </>
     )
