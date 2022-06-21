@@ -2,6 +2,11 @@ import React from "react";
 import { Card } from "semantic-ui-react";
 
 function BeerCard({ beer }){
+
+function handleClick(e) {
+  console.log(e.target.parentNode.parentNode)
+}
+
     return (
         <Card>
         <div className="image">
@@ -11,7 +16,7 @@ function BeerCard({ beer }){
           <div className="header">{beer.name}</div>
         </div>
         <div className="extra content">
-          <button>Add to Cart</button>
+          <button onClick={handleClick}>Add to Cart</button>
           <span>
             <i className="icon heartbeat red" />
             Rating: {Math.round(beer.rating.average * 10)/ 10}

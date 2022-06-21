@@ -7,7 +7,7 @@ function BeerMenu({ beers }){
         <Card.Group itemsPerRow={4}>
             {beers.map((beer) => {
                 return(
-                    <BeerCard beer={beer}/>
+                    <BeerCard key={beer.id} beer={beer}/>
                 )
             })}
         </Card.Group>
