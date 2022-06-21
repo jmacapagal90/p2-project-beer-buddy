@@ -1,12 +1,14 @@
 import BeerMenu from './BeerMenu';
 import Checkout from './Checkout';
 import { Container } from "semantic-ui-react";
+import Search from "./Search";
 
-function Home(){
+function Home({ beers, setSearchQuery }){
 
     return (
         <Container>
-            <BeerMenu />
+            <Search setSearchQuery={setSearchQuery}/>
+            <BeerMenu beers={beers}/>
         </Container>
     )
 }
