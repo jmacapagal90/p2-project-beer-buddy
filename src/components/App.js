@@ -1,20 +1,24 @@
-import './App.css';
-import LoginPage from './LoginPage'
-import LandingPage from './LandingPage';
 import { useState } from 'react';
+import { Switch, Route } from "react-router-dom";
+import Home from './Home';
+import NavBar from './NavBar';
+import Checkout from './Checkout';
 
 function App() {
-  const [isLoggedin, setIsLoggedIn] = useState(false)
-  const helpLogin = () => {
-    setIsLoggedIn(true)
-  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <LoginPage helpLogin={helpLogin}/>
-        {isLoggedin?
-        <LandingPage />:null}
+      <header className="App-header" >
+        <NavBar/>
       </header>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
+          </Route>
+        </Switch>
     </div>
   );
 }
