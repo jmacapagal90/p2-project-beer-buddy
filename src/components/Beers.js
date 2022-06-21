@@ -1,5 +1,4 @@
 import BeerMenu from './BeerMenu';
-import Checkout from './Checkout';
 import { Container } from "semantic-ui-react";
 import Search from "./Search";
 

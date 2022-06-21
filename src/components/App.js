@@ -10,6 +10,11 @@ function App() {
 const [beers, setBeers] = useState([])
 const [searchQuery, setSearchQuery] = useState("")
 
+
+function addToCart(card) {
+  
+}
+
 useEffect(() => {
   fetch("https://api.sampleapis.com/beers/ale")
   .then(res => res.json())
