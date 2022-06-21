@@ -1,16 +1,19 @@
-import BeerMenu from './BeerMenu';
-import Checkout from './Checkout';
-import { Container } from "semantic-ui-react";
-import Search from "./Search";
+import React from 'react'
 
-function Home({ beers, setSearchQuery }){
-
+function Home() {
     return (
-        <Container>
-            <Search setSearchQuery={setSearchQuery}/>
-            <BeerMenu beers={beers}/>
-        </Container>
+        <div>
+            <div className="homeHeader">
+                <h1>Welcome to Beer Buddy!</h1>
+            </div>
+            <div className="homeHeader">
+                <h3>Your one-stop shop for Beer!</h3>
+            </div>
+            <div className="homeHeader">
+                <img src="https://i.gifer.com/1SVr.gif" alt="beer"/>
+            </div>
+        </div>
     )
 }
 
-export default Home
+export default Home;

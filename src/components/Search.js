@@ -7,10 +7,12 @@ function handleChange(e) {
 }
 
   return (
-    <div className="ui search">
-      <div className="ui icon input">
-        <input onChange={handleChange} className="prompt" />
-        <i className="search icon" />
+    <div className="homeHeader">
+      <div className="ui search">
+        <div className="ui icon input">
+          <input onChange={handleChange} className="prompt" />
+          <i className="search icon" />
+        </div>
       </div>
     </div>
   );
