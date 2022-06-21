@@ -2,17 +2,14 @@ import React from "react";
 import BeerCard from "./BeerCard";
 import { Card } from "semantic-ui-react";
 
-function BeerMenu(){
+function BeerMenu({ beers }){
     return (
         <Card.Group itemsPerRow={4}>
-            <BeerCard/>
-            <BeerCard/>
-            <BeerCard/>
-            <BeerCard/>
-            <BeerCard/>
-            <BeerCard/>
-            <BeerCard/>
-            <BeerCard/>
+            {beers.map((beer) => {
+                return(
+                    <BeerCard beer={beer}/>
+                )
+            })}
         </Card.Group>
     )
 }
