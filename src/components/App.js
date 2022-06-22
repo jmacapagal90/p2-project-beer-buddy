@@ -7,24 +7,30 @@ import Home from './Home';
 
 function App() {
 
-const [beers, setBeers] = useState([]);
-const [searchQuery, setSearchQuery] = useState("");
-const [cart,setCart] = useState([]);
+  const [beers, setBeers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [cart,setCart] = useState([]);
+  const [activeTab,setActiveTab] = useState(0);
 
-function addToCart(beerObj) {
-  setCart([...cart,beerObj]);
-}
+  function addToCart(beerObj) {
+    setCart([...cart,beerObj]);
+  }
+
+  function sendActiveTab(tab){
+    setActiveTab(tab)
+  }
+
+  useEffect(() => {
+    fetch("https://api.sampleapis.com/beers/ale")
+    .then(res => res.json())
+    .then(data => setBeers(data))
+  }, [])
+
+  const searchResults = beers.filter((beer) => {
+      return beer.name.toLowerCase().includes(searchQuery.toLowerCase())
+    })
 
 
-useEffect(() => {
-  fetch("https://api.sampleapis.com/beers/ale")
-  .then(res => res.json())
-  .then(data => setBeers(data))
-}, [])
-
-const searchResults = beers.filter((beer) => {
-    return beer.name.toLowerCase().includes(searchQuery.toLowerCase())
-  })
 
   return (
     <div className="App">
@@ -33,13 +39,13 @@ const searchResults = beers.filter((beer) => {
       </header>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home sendActiveTab={sendActiveTab}/>
           </Route>
           <Route exact path="/beers">
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart}/>
+            <Checkout cart={cart} activeTab={activeTab}/>
           </Route>
         </Switch>
     </div>
