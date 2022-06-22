@@ -13,10 +13,8 @@ const [cart,setCart] = useState([]);
 
 function addToCart(beerObj) {
   setCart([...cart,beerObj]);
-  console.log(beerObj)
 }
 
-console.log(cart)
 
 useEffect(() => {
   fetch("https://api.sampleapis.com/beers/ale")
