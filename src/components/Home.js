@@ -55,7 +55,8 @@ function Home({sendActiveTab}) {
         }
 
     function selectOpenTab(e){
-        console.log(e.target.textContent)
+        const tabFilter = openTabs.filter((tab)=> tab.tabName === e.target.textContent)[0]
+        sendActiveTab({id: tabFilter.id, name: tabFilter.tabName})
     }
 
     return (

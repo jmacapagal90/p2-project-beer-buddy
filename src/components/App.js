@@ -17,6 +17,7 @@ function App() {
   }
 
   function sendActiveTab(tab){
+    console.log(tab)
     setActiveTab(tab)
   }
 
