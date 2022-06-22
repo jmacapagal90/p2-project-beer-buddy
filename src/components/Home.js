@@ -9,7 +9,7 @@ function Home() {
     // update a tab >> opens a drop down of open existing tabs
     // once opened/submit it takes you to browse beers
     // choose a tab 
-    const openTabs = [
+    const exampleTabs = [
         {
           key: 'Jenny Hess',
           text: 'Jenny Hess',
@@ -21,27 +21,35 @@ function Home() {
           value: 'Elliot Fu',
         },]
 
+
+
     function submitNewTab(e){
         e.preventDefault();
-        setTabName(e.target.name.value)
+        console(e.target.name.value)
+        //setTabName(e.target.name.value)
         // post to tabDB
-        fetch('https://example.com/profile/open', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                tabName: tabName,
-            }),
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Success:', data);
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
+        // fetch('https://tabDB.com/tabs/open', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         tabName: tabName,
+        //     }),
+        //   })
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     console.log('Success:', data);
+        //   })
+        //   .catch((error) => {
+        //     console.error('Error:', error);
+        //   });
         }
+
+    function selectOpenTab(e){
+        console.log(e.target.textContent)
+        //setOpenTabs(exampleTabs)
+    }
 
     return (
         <div className="homeBlock">
@@ -49,7 +57,7 @@ function Home() {
                 <h3>Your one-stop shop for Beer!</h3>
             <h3>Got a Tab?</h3>
         <h3>Create Tab</h3>
-            <form onSubmit={submitNewTab}>
+            <form onSubmit={(e)=>submitNewTab(e)}>
                 <label for="tabname">Tab name:</label>
                 <input type="text" name="name"/>
                 <input type="submit" value="Submit"/>
@@ -60,7 +68,8 @@ function Home() {
                 placeholder='Select Friend'
                 fluid
                 selection
-                options={openTabs}
+                options={exampleTabs}
+                onChange={(e)=>selectOpenTab(e)}
             /> 
             {/* will need an onchange fx to update state variable with tabID from TabDB and passed to checkout */}
         <div id="gif">
