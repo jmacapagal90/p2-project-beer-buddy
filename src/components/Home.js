@@ -1,24 +1,24 @@
 import React, { useState,useEffect } from 'react';
-import {Dropdown, Tab} from "semantic-ui-react";
+import {Dropdown} from "semantic-ui-react";
 
-function Home() {
-    const [openTabs, setOpenTabs] = useState([])
+function Home({sendActiveTab}) {
+    const [openTabs, setOpenTabs] = useState(null)
     /// add functionality to create a new tab or update a new tab
     // add new tab >> fill out form for tab name 
     // update a tab >> opens a drop down of open existing tabs
     // once opened/submit it takes you to browse beers
     // choose a tab 
 
-    const openTabDisplay = openTabs.map((tab)=>{
+    const openTabDisplay = (openTabs ? openTabs.map((tab)=>{
         return {
             key: tab.id,
             text: tab.tabName,
             value: tab.tabName,
         }
-    })
+    }) : null)
 
     useEffect(() => {
-        fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
+        fetch('https://sheltered-beach-53138.herokuapp.com/openTabs', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,14 +29,14 @@ function Home() {
         .catch((error) => {
         console.error('Error:', error);
         });
-    }, [])
+    }, [openTabs])
 
     function submitNewTab(e){
         e.preventDefault();
         const tabName = e.target.name.value
 
         // post to tabDB
-        fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
+        fetch('https://sheltered-beach-53138.herokuapp.com/openTabs', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -46,24 +46,23 @@ function Home() {
             }),
           })
           .then(response => response.json())
-          .then(data => {
-            console.log('Success:', data);
-          })
+          .then(data => 
+            sendActiveTab({id: data.id, name: data.tabName})
+          )
           .catch((error) => {
             console.error('Error:', error);
           });
         }
 
     function selectOpenTab(e){
-        console.log(e.target.textContent)
-        //setOpenTabs(exampleTabs)
+        const tabFilter = openTabs.filter((tab)=> tab.tabName === e.target.textContent)[0]
+        sendActiveTab({id: tabFilter.id, name: tabFilter.tabName})
     }
 
     return (
         <div className="homeBlock">
                 <h1>Welcome to Beer Buddy!</h1>
                 <h3>Your one-stop shop for Beer!</h3>
-            <h3>Got a Tab?</h3>
         <h3>Create Tab</h3>
             <form onSubmit={(e)=>submitNewTab(e)}>
                 <label for="tabname">Tab name:</label>

@@ -3,18 +3,11 @@ import { Card } from "semantic-ui-react";
 import { FaShoppingCart,FaTrash } from "react-icons/fa";
 
 
-function BeerCard({ beer, addToCart }){
+function BeerCard({ beer, addToCart,deleteBeer }){
 
-function handleClick() {
-  const beerObj = {
-    name: beer.name,
-    image: beer.image,
-    price: beer.price,
-    average: beer.rating.average
+  function handleClick() {
+    addToCart ?  addToCart(beer) : deleteBeer(beer)
   }
-  console.log(beerObj)
-  addToCart(beerObj)
-}
 
     return (
         <Card>
@@ -25,7 +18,8 @@ function handleClick() {
           <div className="header">{beer.name}</div>
         </div>
         <div className="extra content">
-          <button onClick={handleClick}><FaShoppingCart/></button>
+          <h1>{beer.price}</h1>
+          <button onClick={handleClick}>{addToCart ? <FaShoppingCart/> : <FaTrash/>}</button>
           <span>
             <i className="icon heartbeat red" />
             Rating: {Math.round(beer.rating.average * 10)/ 10}

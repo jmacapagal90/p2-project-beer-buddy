@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.button {
+.button,button {
   padding: 0.5rem 0.75rem;
   border: none
 }
@@ -15,6 +15,13 @@
   padding-bottom: 25px;
 }
 
+#checkout{
+  display: block;
+  text-align: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 
 #gif {
   padding-top: 25px;

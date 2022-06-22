@@ -7,24 +7,39 @@ import Home from './Home';
 
 function App() {
 
-const [beers, setBeers] = useState([]);
-const [searchQuery, setSearchQuery] = useState("");
-const [cart,setCart] = useState([]);
+  const [beers, setBeers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [cart,setCart] = useState([]);
+  const [activeTab,setActiveTab] = useState(0);
 
-function addToCart(beerObj) {
-  setCart([...cart,beerObj]);
-}
+  function addToCart(beerObj) {
+    setCart([...cart,beerObj]);
+  }
 
 
-useEffect(() => {
-  fetch("https://api.sampleapis.com/beers/ale")
-  .then(res => res.json())
-  .then(data => setBeers(data))
-}, [])
+  function clearCart(){
+    setCart([])
+  }
 
-const searchResults = beers.filter((beer) => {
-    return beer.name.toLowerCase().includes(searchQuery.toLowerCase())
-  })
+  function sendActiveTab(tab){
+    setActiveTab(tab)
+  }
+
+  function deleteBeer(beerToDelete){
+    setCart(cart.filter((cartBeer)=> cartBeer.id !== beerToDelete.id))
+  }
+
+  useEffect(() => {
+    fetch("https://api.sampleapis.com/beers/ale")
+    .then(res => res.json())
+    .then(data => setBeers(data))
+  }, [])
+
+  const searchResults = beers.filter((beer) => {
+      return beer.name.toLowerCase().includes(searchQuery.toLowerCase())
+    })
+
+
 
   return (
     <div className="App">
@@ -33,13 +48,13 @@ const searchResults = beers.filter((beer) => {
       </header>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home sendActiveTab={sendActiveTab}/>
           </Route>
           <Route exact path="/beers">
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart}/>
+            <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer}/>
           </Route>
         </Switch>
     </div>
