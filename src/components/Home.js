@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {Dropdown, Tab} from "semantic-ui-react";
 
 function Home() {
@@ -21,14 +21,35 @@ function Home() {
           value: 'Elliot Fu',
         },]
 
+    const openTabDisplay = openTabs.map((tab)=>{
+        return {
+            key: tab.id,
+            text: tab.tabName,
+        }
+    })
 
+    console.log(openTabDisplay)
+
+    useEffect(() => {
+        fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }}
+        )
+        .then(response => response.json())
+        .then(tabs => setOpenTabs(tabs))
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+    }, [])
 
     function submitNewTab(e){
         e.preventDefault();
         console(e.target.name.value)
         //setTabName(e.target.name.value)
         // post to tabDB
-        // fetch('https://tabDB.com/tabs/open', {
+        // fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
         //     method: 'POST',
         //     headers: {
         //       'Content-Type': 'application/json',
@@ -68,7 +89,7 @@ function Home() {
                 placeholder='Select Friend'
                 fluid
                 selection
-                options={exampleTabs}
+                options={openTabDisplay}
                 onChange={(e)=>selectOpenTab(e)}
             /> 
             {/* will need an onchange fx to update state variable with tabID from TabDB and passed to checkout */}
