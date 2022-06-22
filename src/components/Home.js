@@ -63,7 +63,6 @@ function Home({sendActiveTab}) {
         <div className="homeBlock">
                 <h1>Welcome to Beer Buddy!</h1>
                 <h3>Your one-stop shop for Beer!</h3>
-            <h3>Got a Tab?</h3>
         <h3>Create Tab</h3>
             <form onSubmit={(e)=>submitNewTab(e)}>
                 <label for="tabname">Tab name:</label>

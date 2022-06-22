@@ -16,8 +16,12 @@ function App() {
     setCart([...cart,beerObj]);
   }
 
+
+  function clearCart(){
+    setCart([])
+  }
+
   function sendActiveTab(tab){
-    console.log(tab)
     setActiveTab(tab)
   }
 
@@ -50,7 +54,7 @@ function App() {
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart} activeTab={activeTab} deleteBeer={deleteBeer}/>
+            <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer}/>
           </Route>
         </Switch>
     </div>

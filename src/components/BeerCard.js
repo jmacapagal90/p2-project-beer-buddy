@@ -5,15 +5,9 @@ import { FaShoppingCart,FaTrash } from "react-icons/fa";
 
 function BeerCard({ beer, addToCart,deleteBeer }){
 
-function handleClick() {
-  // const beerObj = {
-  //   name: beer.name,
-  //   image: beer.image,
-  //   price: beer.price,
-  //   average: beer.rating.average
-  // }
-  addToCart ?  addToCart(beer) : deleteBeer(beer)
-}
+  function handleClick() {
+    addToCart ?  addToCart(beer) : deleteBeer(beer)
+  }
 
     return (
         <Card>
@@ -24,6 +18,7 @@ function handleClick() {
           <div className="header">{beer.name}</div>
         </div>
         <div className="extra content">
+          <h1>{beer.price}</h1>
           <button onClick={handleClick}>{addToCart ? <FaShoppingCart/> : <FaTrash/>}</button>
           <span>
             <i className="icon heartbeat red" />
