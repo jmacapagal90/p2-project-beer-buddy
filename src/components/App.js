@@ -21,6 +21,10 @@ function App() {
     setActiveTab(tab)
   }
 
+  function deleteBeer(beerToDelete){
+    setCart(cart.filter((cartBeer)=> cartBeer.id !== beerToDelete.id))
+  }
+
   useEffect(() => {
     fetch("https://api.sampleapis.com/beers/ale")
     .then(res => res.json())
@@ -46,7 +50,7 @@ function App() {
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart} activeTab={activeTab}/>
+            <Checkout cart={cart} activeTab={activeTab} deleteBeer={deleteBeer}/>
           </Route>
         </Switch>
     </div>
