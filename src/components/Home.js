@@ -2,33 +2,20 @@ import React, { useState,useEffect } from 'react';
 import {Dropdown, Tab} from "semantic-ui-react";
 
 function Home() {
-    const [tabName, setTabName] = useState("")
     const [openTabs, setOpenTabs] = useState([])
     /// add functionality to create a new tab or update a new tab
     // add new tab >> fill out form for tab name 
     // update a tab >> opens a drop down of open existing tabs
     // once opened/submit it takes you to browse beers
     // choose a tab 
-    const exampleTabs = [
-        {
-          key: 'Jenny Hess',
-          text: 'Jenny Hess',
-          value: 'Jenny Hess',
-        },
-        {
-          key: 'Elliot Fu',
-          text: 'Elliot Fu',
-          value: 'Elliot Fu',
-        },]
 
     const openTabDisplay = openTabs.map((tab)=>{
         return {
             key: tab.id,
             text: tab.tabName,
+            value: tab.tabName,
         }
     })
-
-    console.log(openTabDisplay)
 
     useEffect(() => {
         fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
@@ -46,25 +33,25 @@ function Home() {
 
     function submitNewTab(e){
         e.preventDefault();
-        console(e.target.name.value)
-        //setTabName(e.target.name.value)
+        const tabName = e.target.name.value
+
         // post to tabDB
-        // fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         tabName: tabName,
-        //     }),
-        //   })
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     console.log('Success:', data);
-        //   })
-        //   .catch((error) => {
-        //     console.error('Error:', error);
-        //   });
+        fetch('https://sheltered-beach-53138.herokuapp.com/openTab', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                tabName: tabName,
+            }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
         }
 
     function selectOpenTab(e){
