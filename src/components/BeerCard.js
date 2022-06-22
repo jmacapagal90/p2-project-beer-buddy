@@ -26,7 +26,6 @@ function handleClick() {
         </div>
         <div className="extra content">
           <button onClick={handleClick}><FaShoppingCart/></button>
-          <button><FaTrash/></button>
           <span>
             <i className="icon heartbeat red" />
             Rating: {Math.round(beer.rating.average * 10)/ 10}
