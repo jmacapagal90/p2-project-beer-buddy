@@ -29,14 +29,20 @@
 
 
 ## Site
-### Landing Page
-![](https://user-images.githubusercontent.com/101954624/175187681-c499d660-ec33-43b9-8cbf-211c300fbbd7.jpg)
+### Home Page
+![](https://user-images.githubusercontent.com/30418526/175393335-fa18c9c6-a7a9-4aea-81ee-4a511368fa29.png)
 
 ### Beer List
-![](https://user-images.githubusercontent.com/101954624/175186333-2f284bab-4d01-4d6e-ae1d-f00b3d13a113.jpg)
+![](https://user-images.githubusercontent.com/30418526/175393419-0d4ce96a-e112-4b8a-b396-7c464e1ebafe.png)
+
+### Add Beer Form
+![](https://user-images.githubusercontent.com/30418526/175393493-768aa817-57b6-4cf4-9047-5bbd710a261e.png)
 
 ### Checkout
-![](https://user-images.githubusercontent.com/101954624/175187935-1db1b42d-ae09-4646-9b47-29da400281ff.jpg)
+![](https://user-images.githubusercontent.com/30418526/175393975-872cbad9-80b6-4065-b664-8433098ccbef.png)
+
+### Close Tab
+![](https://user-images.githubusercontent.com/30418526/175394134-65d6cf05-15d3-4de6-94df-68fcd04e7ba6.png)
 
 ## Setup
 
@@ -53,6 +59,7 @@ Room for improvement:
 - display items in cart and total cost
 - filter by price
 - improve css styling 
+
 
 
 
