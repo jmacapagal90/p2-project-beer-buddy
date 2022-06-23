@@ -30,7 +30,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("https://api.sampleapis.com/beers/ale")
+    fetch("https://sheltered-beach-53138.herokuapp.com/ale")
     .then(res => res.json())
     .then(data => setBeers(data))
   }, [])
