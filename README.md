@@ -1,4 +1,5 @@
 # BEER BUDDY
+- [Hosted here: ](https://chimerical-begonia-834f94.netlify.app/)
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
