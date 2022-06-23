@@ -48,8 +48,8 @@ Dependencies are listed inside the package.json file
 ## Room for Improvement
 
 Room for improvement:
-- update tabs inside db instead of overwriting with the new cart
-
+- improvement db functionality
+- import more than beer types than ale
 To do:
 - display items in cart and total cost
 - filter by price
