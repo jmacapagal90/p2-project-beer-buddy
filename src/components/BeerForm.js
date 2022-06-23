@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Form, Button } from "semantic-ui-react"
+import { Form, Button,Input,Label,Container } from "semantic-ui-react"
 
 function BeerForm({onHandleNewBeer}){
     const [beerName,setBeerName] = useState("");
@@ -37,21 +37,23 @@ function BeerForm({onHandleNewBeer}){
         }
 
     return (
-        <div className="homeHeader">
+        <Container textAlign="center">
         <Form onSubmit={(e)=>{submitNewBeer(e)}}>
             <Form.Field>
-                <label for="beerform">Beer Name:</label>
-                <input placeholder='Beer Name' onChange={(e)=>setBeerName(e.target.value)} value={beerName}/>
+                <Label for="beerform">Beer Name:</Label>
+                <Input placeholder='Beer Name' onChange={(e)=>setBeerName(e.target.value)} value={beerName}/>
             </Form.Field>
             <Form.Field>
-                <label for="beerform">Image</label>
-                <input placeholder='Image' onChange={(e)=>setBeerImage(e.target.value)} value={beerImage}/>
+                <Label for="beerform">Image: </Label>
+                <Input placeholder='Image' onChange={(e)=>setBeerImage(e.target.value)} value={beerImage}/>
             </Form.Field>
-                <label for="beerform">Price:</label>
-                <input placeholder='Price' onChange={(e)=>setBeerPrice(e.target.value)} value={beerPrice}/>            
+            <Form.Field>
+                <Label for="beerform">Price:</Label>
+                <Input placeholder='Price' onChange={(e)=>setBeerPrice(e.target.value)} value={beerPrice}/>            
+            </Form.Field>
             <Button type='submit'>Submit</Button>
         </Form>
-        </div>
+        </Container>
     )
 }
 
