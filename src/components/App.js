@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Beers from './Beers';
+import BeerForm from './BeerForm';
 import NavBar from './NavBar';
 import Checkout from './Checkout';
 import Home from './Home';
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route exact path="/beers">
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
+          </Route>
+          <Route exact path="/addbeer">
+            <BeerForm />
           </Route>
           <Route exact path="/checkout">
             <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer} sendActiveTab={sendActiveTab}/>
