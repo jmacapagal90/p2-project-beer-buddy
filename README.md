@@ -12,7 +12,7 @@
 
 
 ## General Information
-- Beer Buddy is a SPA that allows users to search through beers and add them to a cart to order
+- Beer Buddy is a SPA that allows users to search through beers and update tabs with different beer order
 
 ## Technologies Used
 - react: 18.2
