@@ -27,7 +27,7 @@ function App() {
     .catch((error) => {
     console.error('Error:', error);
     });
-  }, [openTabs])
+  }, [])
 
   function addToCart(beerObj) {
     setCart([...cart,beerObj]);
@@ -41,6 +41,8 @@ function App() {
   function sendActiveTab(tab){
     setActiveTab(tab)
   }
+
+ 
 
   function deleteBeer(beerToDelete){
     setCart(cart.filter((cartBeer)=> cartBeer.id !== beerToDelete.id))

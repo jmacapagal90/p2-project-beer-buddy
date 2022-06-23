@@ -6,13 +6,14 @@ function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
   //if you havent opened a tab yet or added to existing tab, in checkout, if tab is null, create an alert asking to create a tab
 
   function checkoutCart(){
+    
     fetch(`https://sheltered-beach-53138.herokuapp.com/openTabs/${activeTab.id}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              beersOrdered: [...activeTab.beersOrdered,...cart]}),
+              beersOrdered: [...activeTab.beersOrdered, ...cart]}),
           })
           .then(response => response.json())
           .then(data => 
@@ -26,7 +27,7 @@ function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
     return (
       <Container>
         <Menu fluid widths="2">
-          <MenuItem> Tab Name: {(activeTab) ? (activeTab.name) : ""}
+          <MenuItem> Tab Name: {(activeTab) ? (activeTab.tabName) : ""}
           </MenuItem>
           <MenuItem>
             <Button text="Check Out" onClick={checkoutCart}>Check Out</Button>

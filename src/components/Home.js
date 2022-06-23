@@ -23,11 +23,12 @@ function Home({sendActiveTab,openTabs}) {
             },
             body: JSON.stringify({
                 tabName: tabName,
+                beersOrdered:[],
             }),
           })
           .then(response => response.json())
           .then(data => 
-            sendActiveTab({id: data.id, name: data.tabName})
+            sendActiveTab(data)
           )
           .catch((error) => {
             console.error('Error:', error);
