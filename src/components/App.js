@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import CloseTab from './CloseTab';
 import Checkout from './Checkout';
 import Home from './Home';
+import { Header } from 'semantic-ui-react'
 
 function App() {
   const [openTabs, setOpenTabs] = useState(null)
@@ -68,9 +69,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header" >
+      <Header className="App-header" >
         <NavBar/>
-      </header>
+      </Header>
         <Switch>
           <Route exact path="/">
             <Home sendActiveTab={sendActiveTab} openTabs={openTabs}/>
