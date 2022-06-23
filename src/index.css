@@ -4,6 +4,18 @@
   background-color: whitesmoke;
 }
 
+#search{
+  background-color: lightgray;
+  padding: 10px;
+  border: solid;
+  border-width: .5px;
+  border-radius: 500px;
+}
+
+#beerMenu {
+  margin: 10px;
+}
+
 #checkout{
   display: block;
   text-align: center;
