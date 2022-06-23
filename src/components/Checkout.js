@@ -6,10 +6,6 @@ function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
   const [closeTab,setCloseTab] = useState(false)
   //if you havent opened a tab yet or added to existing tab, in checkout, if tab is null, create an alert asking to create a tab
 
-  function handleCheck(){
-    setCloseTab(!closeTab)
-  }
-
   function checkoutCart(){
     fetch(`https://sheltered-beach-53138.herokuapp.com/openTabs/${activeTab.id}`, {
             method: 'PATCH',
