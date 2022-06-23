@@ -1,13 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React from 'react';
 import {Dropdown, Form, Button} from "semantic-ui-react";
 
-function Home({sendActiveTab}) {
-    const [openTabs, setOpenTabs] = useState(null)
-    /// add functionality to create a new tab or update a new tab
-    // add new tab >> fill out form for tab name 
-    // update a tab >> opens a drop down of open existing tabs
-    // once opened/submit it takes you to browse beers
-    // choose a tab 
+function Home({sendActiveTab,openTabs}) {
 
     const openTabDisplay = (openTabs ? openTabs.map((tab)=>{
         return {
@@ -16,20 +10,6 @@ function Home({sendActiveTab}) {
             value: tab.tabName,
         }
     }) : null)
-
-    useEffect(() => {
-        fetch('https://sheltered-beach-53138.herokuapp.com/openTabs', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }}
-        )
-        .then(response => response.json())
-        .then(tabs => setOpenTabs(tabs))
-        .catch((error) => {
-        console.error('Error:', error);
-        });
-    }, [openTabs])
 
     function submitNewTab(e){
         e.preventDefault();
