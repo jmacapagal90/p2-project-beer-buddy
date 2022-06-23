@@ -19,7 +19,7 @@ function CloseTab({activeTab,onDeleteTab}){
     return (
         <Container className="homeHeader">
         <h3>Active Tab: {tabName}</h3>
-            {beersOrdered.length != 0 ? 
+            {beersOrdered.length !== 0 ? 
                 beersOrdered.map((beer)=>{
                 return (
                     <List>
