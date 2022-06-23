@@ -49,8 +49,7 @@ Dependencies are listed inside the package.json file
 
 Room for improvement:
 - improvement db functionality
-- import more than beer types than ale
-To do:
+- import more beer types other than ale
 - display items in cart and total cost
 - filter by price
 - improve css styling 
