@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, MenuItem } from "semantic-ui-react"
 
-function NavBar(){
+function NavBar({cart}){
     return (
         <Menu fluid widths={5} size='massive'>
             <MenuItem>
@@ -15,7 +15,7 @@ function NavBar(){
                 <NavLink to='/addbeer'className="button" activeStyle={{color: "red"}}>Add Beer</NavLink>
             </MenuItem>
             <MenuItem>
-             <NavLink to='/checkout'className="button" activeStyle={{color: "red"}}>Checkout</NavLink>
+             <NavLink to='/checkout'className="button" activeStyle={{color: "red"}}>Checkout ({cart.length})</NavLink>
             </MenuItem>
             <MenuItem>
                 <NavLink to='/closetab'className="button" activeStyle={{color: "red"}}>Close Tab</NavLink>

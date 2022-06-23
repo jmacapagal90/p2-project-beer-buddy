@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="App">
       <Header className="App-header" >
-        <NavBar/>
+        <NavBar cart={cart}/>
       </Header>
         <Switch>
           <Route exact path="/">
