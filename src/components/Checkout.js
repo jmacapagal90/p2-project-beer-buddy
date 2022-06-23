@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Card, Button, Container, Menu, MenuItem } from "semantic-ui-react";
 import BeerCard from "./BeerCard";
 
