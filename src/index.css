@@ -7,7 +7,7 @@
   border: none
 }
 
-.homeBlock {
+.homeBlock, .homeHeader {
   display: block;
   text-align: center;
   justify-content: center;
