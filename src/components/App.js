@@ -54,7 +54,7 @@ function App() {
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer}/>
+            <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer} sendActiveTab={sendActiveTab}/>
           </Route>
         </Switch>
     </div>

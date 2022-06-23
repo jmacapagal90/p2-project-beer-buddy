@@ -56,7 +56,7 @@ function Home({sendActiveTab}) {
 
     function selectOpenTab(e){
         const tabFilter = openTabs.filter((tab)=> tab.tabName === e.target.textContent)[0]
-        sendActiveTab({id: tabFilter.id, name: tabFilter.tabName})
+        sendActiveTab({id: tabFilter.id, name: tabFilter.tabName, beersOrdered: tabFilter.beersOrdered})
     }
 
     return (
@@ -72,7 +72,7 @@ function Home({sendActiveTab}) {
             </form>
         <h3>Update Tab</h3>
         <Dropdown
-                placeholder='Select Friend'
+                placeholder='Select Existing Tab'
                 fluid
                 selection
                 options={openTabDisplay}
