@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, List, Button } from "semantic-ui-react"
+import { Container, List,Header, Button } from "semantic-ui-react"
 
 function CloseTab({activeTab,onDeleteTab}){
     if (activeTab === 0){
@@ -17,8 +17,8 @@ function CloseTab({activeTab,onDeleteTab}){
         onDeleteTab(id)
     }
     return (
-        <Container className="homeHeader">
-        <h3>Active Tab: {tabName}</h3>
+        <Container >
+        <Header>Active Tab: {tabName}</Header>
             {beersOrdered.length !== 0 ? 
                 beersOrdered.map((beer)=>{
                 return (

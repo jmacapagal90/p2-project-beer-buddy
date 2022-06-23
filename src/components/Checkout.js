@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Card, Button,Checkbox, Container } from "semantic-ui-react";
+import { Card, Button, Header, Container, Menu, MenuItem } from "semantic-ui-react";
 import BeerCard from "./BeerCard";
 
 function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
@@ -9,7 +9,7 @@ function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
   function handleCheck(){
     setCloseTab(!closeTab)
   }
-  console.log(activeTab.beersOrdered)
+
   function checkoutCart(){
     fetch(`https://sheltered-beach-53138.herokuapp.com/openTabs/${activeTab.id}`, {
             method: 'PATCH',
@@ -29,21 +29,22 @@ function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
   } 
 
     return (
-      <div id="checkout">
-      <h1>Tab Name: {(activeTab) ? (activeTab.name) : null}</h1>
-      <h2>Place Tab</h2>
       <Container>
-      <Card.Group itemsPerRow={4}>
+        <Menu fluid widths="2">
+          <MenuItem> Tab Name: {(activeTab) ? (activeTab.name) : ""}
+          </MenuItem>
+          <MenuItem>
+            <Button text="Check Out" className={closeTab ? "green" : "grey"} onClick={checkoutCart}>Check Out</Button>
+          </MenuItem>
+          </Menu>
+        <Card.Group itemsPerRow={4}>
         {cart.length !== 0 ? cart.map((beer) => {
                 return(
                     <BeerCard key={beer.id} beer={beer} deleteBeer={deleteBeer}/>
                 )
           }) : null}
-       </Card.Group>
-       </Container>
-        <Checkbox className="text medium" label="Close Tab?" onChange={handleCheck}></Checkbox>
-        <Button text="Check Out" className={closeTab ? "green" : "grey"} onClick={checkoutCart}>Check Out</Button>
-        </div>
+        </Card.Group>
+      </Container>
     )
 }
 

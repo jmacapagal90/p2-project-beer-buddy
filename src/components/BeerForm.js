@@ -9,6 +9,7 @@ function BeerForm({onHandleNewBeer}){
 
     function submitNewBeer(e){
         e.preventDefault();
+        alert("Thanks For Submitting a Beer!")
         const newBeerObj = {
             name: beerName,
             image: beerImage,
@@ -34,11 +35,14 @@ function BeerForm({onHandleNewBeer}){
           .catch((error) => {
             console.error('Error:', error);
           });
+        setBeerName("")
+        setBeerImage("")
+        setBeerPrice(0)
         }
 
     return (
         <Container textAlign="center">
-        <Form onSubmit={(e)=>{submitNewBeer(e)}}>
+        <Form onSubmit={(e)=>{submitNewBeer(e)}} >
             <Form.Field>
                 <Label for="beerform">Beer Name:</Label>
                 <Input placeholder='Beer Name' onChange={(e)=>setBeerName(e.target.value)} value={beerName}/>
