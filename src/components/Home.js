@@ -42,23 +42,23 @@ function Home({sendActiveTab,openTabs}) {
 
     return (
         <Container textAlign='center'>
-                <Header as='h1'>Welcome to Beer Buddy!</Header>
-                <Header subheader>Your one-stop shop for Beer!</Header>
-        <Form onSubmit={(e)=>submitNewTab(e)}>
+            <Header as='h1'>Welcome to Beer Buddy!</Header>
+            <Header subheader>Your one-stop shop for Beer!</Header>
+            <Form onSubmit={(e)=>submitNewTab(e)}>
                 <Header as='h4'>Add A New Tab</Header>
                 <Input type="text" name="name" placeholder="Tab Name"/>
                 <Button type="submit">Open Tab</Button>
-        </Form>
-        <Header as='h4'>Update Tab</Header>
-        <Dropdown 
+            </Form>
+            <Header as='h4'>Update Tab</Header>
+            <Dropdown 
                 placeholder='Select Existing Tab'
                 selection
                 options={openTabDisplay}
                 onChange={(e)=>selectOpenTab(e)}
-        />
-        <Container >
-            <Image id="mainImage" centered circular inline src="https://i.gifer.com/1SVr.gif" alt="beer"/>
-        </Container>
+                />
+            <Container >
+                <Image id="mainImage" centered circular inline src="https://i.gifer.com/1SVr.gif" alt="beer"/>
+            </Container>
         </Container>
     )
 }
