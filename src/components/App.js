@@ -47,7 +47,7 @@ function App() {
 
   function handleDeleteTab(id){
     setActiveTab(0)
-    
+    setOpenTabs(openTabs.filter((tabs)=> tabs.id !== id))
   }
 
   function handleNewBeer(newBeerObj){

@@ -1,14 +1,19 @@
 import React from "react";
-import BeerCard from "./BeerCard";
 import { Container, List, Button } from "semantic-ui-react"
 
 function CloseTab({activeTab,onDeleteTab}){
+    if (activeTab === 0){
+        return (
+            <h1>No Active Tabs Found</h1>
+        )
+    }
     const {id, tabName,beersOrdered} = activeTab;
 
     function handleCloseTab(){
+        console.log(id)
         fetch(`https://sheltered-beach-53138.herokuapp.com/openTabs/${id}`, {
             method: 'DELETE',
-    })
+        }).then(r => r.json());
         onDeleteTab(id)
     }
     return (
@@ -23,7 +28,7 @@ function CloseTab({activeTab,onDeleteTab}){
                     </List>
                 )
             }): null}
-        <Button type="submit" onSubmit={handleCloseTab}>Close Tab</Button>
+        <Button type="submit" onClick={handleCloseTab}>Close Tab</Button>
         </Container>       
     )
 }

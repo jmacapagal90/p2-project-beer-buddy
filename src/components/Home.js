@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React from 'react';
 import {Dropdown, Form, Button} from "semantic-ui-react";
 
 function Home({sendActiveTab,openTabs}) {
