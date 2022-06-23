@@ -70,7 +70,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <>
       <Header className="App-header" >
         <NavBar cart={cart}/>
       </Header>
@@ -91,7 +91,7 @@ function App() {
             <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer} sendActiveTab={sendActiveTab}/>
           </Route>
         </Switch>
-    </div>
+      </>
   );
 }
 
