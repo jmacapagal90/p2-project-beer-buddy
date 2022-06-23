@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Beers from './Beers';
 import BeerForm from './BeerForm';
 import NavBar from './NavBar';
+import CloseTab from './CloseTab';
 import Checkout from './Checkout';
 import Home from './Home';
 
@@ -61,6 +62,9 @@ function App() {
           </Route>
           <Route exact path="/addbeer">
             <BeerForm onHandleNewBeer={handleNewBeer}/>
+          </Route>
+          <Route exact path="/closetab">
+            <CloseTab activeTab={activeTab}/>
           </Route>
           <Route exact path="/checkout">
             <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer} sendActiveTab={sendActiveTab}/>

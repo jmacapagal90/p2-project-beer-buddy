@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import {Dropdown} from "semantic-ui-react";
+import {Dropdown, Form, Button} from "semantic-ui-react";
 
 function Home({sendActiveTab}) {
     const [openTabs, setOpenTabs] = useState(null)
@@ -63,13 +63,11 @@ function Home({sendActiveTab}) {
         <div className="homeBlock">
                 <h1>Welcome to Beer Buddy!</h1>
                 <h3>Your one-stop shop for Beer!</h3>
-        <h3>Create Tab</h3>
-            <form onSubmit={(e)=>submitNewTab(e)}>
-                <label for="tabname">Tab name:</label>
-                <input type="text" name="name"/>
-                <input type="submit" value="Submit"/>
-                {/* form will create POST for new Tab to Tab DB and pass key */}
-            </form>
+        <Form onSubmit={(e)=>submitNewTab(e)}>
+                <h3>Add A New Tab</h3>
+                <input type="text" name="name" placeholder="Tab Name"/>
+                <Button type="submit">Open Tab</Button>
+        </Form>
         <h3>Update Tab</h3>
         <Dropdown
                 placeholder='Select Existing Tab'
@@ -77,8 +75,7 @@ function Home({sendActiveTab}) {
                 selection
                 options={openTabDisplay}
                 onChange={(e)=>selectOpenTab(e)}
-            /> 
-            {/* will need an onchange fx to update state variable with tabID from TabDB and passed to checkout */}
+        />
         <div id="gif">
             <img src="https://i.gifer.com/1SVr.gif" alt="beer"/>
         </div>

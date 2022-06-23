@@ -1,12 +1,10 @@
 import React, {useState} from "react";
 import { Form, Button } from "semantic-ui-react"
 
-function BeerForm(){
+function BeerForm({onHandleNewBeer}){
     const [beerName,setBeerName] = useState("");
     const [beerImage,setBeerImage] = useState("");
     const [beerPrice,setBeerPrice] = useState(0);
-
-
 
 
     function submitNewBeer(e){
