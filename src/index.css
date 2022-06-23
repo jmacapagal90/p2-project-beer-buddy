@@ -3,7 +3,9 @@
   padding: 10px;
   background-color: whitesmoke;
 }
-
+#searchInput{
+  border-radius: 50px;
+}
 #search{
   background-color: lightgray;
   padding: 10px;
