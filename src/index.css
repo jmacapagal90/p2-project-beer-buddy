@@ -1,18 +1,7 @@
-.navbar {
-  text-align: center;
-}
-
-.button,button {
-  padding: 0.5rem 0.75rem;
-  border: none
-}
-
-.homeBlock, .homeHeader {
-  display: block;
-  text-align: center;
-  justify-content: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+#mainImage {
+  margin: 25px;
+  padding: 10px;
+  background-color: whitesmoke;
 }
 
 #checkout{
@@ -23,7 +12,3 @@
   padding-bottom: 25px;
 }
 
-#gif {
-  padding-top: 25px;
-  padding-bottom: 25px;
-}

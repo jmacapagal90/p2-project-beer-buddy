@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dropdown, Form, Button} from "semantic-ui-react";
+import {Container, Input, Dropdown, Header, Form, Button, Image} from "semantic-ui-react";
 
 function Home({sendActiveTab,openTabs}) {
 
@@ -40,26 +40,25 @@ function Home({sendActiveTab,openTabs}) {
     }
 
     return (
-        <div className="homeBlock">
-                <h1>Welcome to Beer Buddy!</h1>
-                <h3>Your one-stop shop for Beer!</h3>
+        <Container textAlign='center'>
+                <Header as='h1'>Welcome to Beer Buddy!</Header>
+                <Header subheader>Your one-stop shop for Beer!</Header>
         <Form onSubmit={(e)=>submitNewTab(e)}>
-                <h3>Add A New Tab</h3>
-                <input type="text" name="name" placeholder="Tab Name"/>
+                <Header as='h4'>Add A New Tab</Header>
+                <Input type="text" name="name" placeholder="Tab Name"/>
                 <Button type="submit">Open Tab</Button>
         </Form>
-        <h3>Update Tab</h3>
-        <Dropdown
+        <Header as='h4'>Update Tab</Header>
+        <Dropdown 
                 placeholder='Select Existing Tab'
-                fluid
                 selection
                 options={openTabDisplay}
                 onChange={(e)=>selectOpenTab(e)}
         />
-        <div id="gif">
-            <img src="https://i.gifer.com/1SVr.gif" alt="beer"/>
-        </div>
-        </div>
+        <Container >
+            <Image id="mainImage" centered circular inline src="https://i.gifer.com/1SVr.gif" alt="beer"/>
+        </Container>
+        </Container>
     )
 }
 

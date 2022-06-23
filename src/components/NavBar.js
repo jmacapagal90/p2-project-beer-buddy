@@ -9,10 +9,10 @@ function NavBar(){
                 <NavLink exact to='/' className="button" activeStyle={{color: "red"}} >Home</NavLink>
             </MenuItem>
             <MenuItem>
-                <NavLink to='/beers' className="button" activeStyle={{color: "red"}}>Beers</NavLink>
+                <NavLink to='/beers' className="button" activeStyle={{color: "red"}}>Browse Beer</NavLink>
             </MenuItem>
             <MenuItem>
-                <NavLink to='/addbeer'className="button" activeStyle={{color: "red"}}>Add New Beer</NavLink>
+                <NavLink to='/addbeer'className="button" activeStyle={{color: "red"}}>Add Beer</NavLink>
             </MenuItem>
             <MenuItem>
              <NavLink to='/checkout'className="button" activeStyle={{color: "red"}}>Checkout</NavLink>
