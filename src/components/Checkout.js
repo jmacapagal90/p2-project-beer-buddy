@@ -1,16 +1,15 @@
 import React, {useState} from "react";
 import { Card, Button,Checkbox, Container } from "semantic-ui-react";
-import { FaTrash } from "react-icons/fa";
 import BeerCard from "./BeerCard";
 
-function Checkout({cart,activeTab,deleteBeer,clearCart}){
+function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
   const [closeTab,setCloseTab] = useState(false)
   //if you havent opened a tab yet or added to existing tab, in checkout, if tab is null, create an alert asking to create a tab
 
   function handleCheck(){
     setCloseTab(!closeTab)
   }
-
+  console.log(activeTab.beersOrdered)
   function checkoutCart(){
     fetch(`https://sheltered-beach-53138.herokuapp.com/openTabs/${activeTab.id}`, {
             method: 'PATCH',
@@ -18,11 +17,11 @@ function Checkout({cart,activeTab,deleteBeer,clearCart}){
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              cart: cart}),
+              beersOrdered: [...activeTab.beersOrdered,...cart]}),
           })
           .then(response => response.json())
           .then(data => 
-            console.log(data))
+            sendActiveTab(data))
           .then(clearCart())
           .catch((error) => {
             console.error('Error:', error);
