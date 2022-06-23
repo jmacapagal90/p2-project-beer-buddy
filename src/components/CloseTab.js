@@ -4,7 +4,7 @@ import { Container, List,Header, Button } from "semantic-ui-react"
 function CloseTab({activeTab,onDeleteTab}){
     if (activeTab === 0){
         return (
-            <h1>No Active Tabs Found</h1>
+            <Header>No Active Tabs Found</Header>
         )
     }
     const {id, tabName,beersOrdered} = activeTab;
