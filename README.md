@@ -1,83 +1,62 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# p2-project-beer-buddy
-Flatiron Phase 2 Project - Beer Buddy App - jmacapagal, hkassow, dyang
+# BEER BUDDY
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Site](#site)
+* [Setup](#setup)
+* [Room for Improvement](#room-for-improvement)
+* [Team](#team)
 
-##
-This is the README for our Phase 2 project, Beer Buddy, a SPA dedicated to browsing, adding, and tracking beer!
 
-=======
-# Getting Started with Create React App
-=======
-c# Getting Started with Create React App
->>>>>>> 7cd1f06 (test)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## General Information
+- Beer Buddy is a SPA that allows users to search through beers and add them to a cart to order
 
-## Available Scripts
+## Technologies Used
+- react: 18.2
+- semantic-ui-react: 2.0.1
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
+- create a new tab
+- update an exisiting tab
+- grabs list of beers through beer api
+- filter through list of beers by name
+- add beers to cart 
+- place order > makes a patch request to our db with the list of beers ordered 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Site
+### Landing Page
+![](https://user-images.githubusercontent.com/101954624/175187681-c499d660-ec33-43b9-8cbf-211c300fbbd7.jpg)
 
-### `npm test`
+### Beer List
+![](https://user-images.githubusercontent.com/101954624/175186333-2f284bab-4d01-4d6e-ae1d-f00b3d13a113.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Checkout
+![](https://user-images.githubusercontent.com/101954624/175187935-1db1b42d-ae09-4646-9b47-29da400281ff.jpg)
 
-### `npm run build`
+## Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To setup the app first fork and cd into the app then run:
+- npm install
+- npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Dependencies are listed inside the package.json file
+## Room for Improvement
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Room for improvement:
+- update tabs inside db instead of overwriting with the new cart
 
-### `npm run eject`
+To do:
+- display items in cart and total cost
+- filter by price
+- improve css styling 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 7137168 (Initialize project using Create React App)
+## Team
+- [James Macapagal](https://github.com/jmacapagal90)
+- [Daniel Yang](https://github.com/SudoCodemon)
+- [Hunter Kassow](https://github.com/hkassow)
