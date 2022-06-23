@@ -13,6 +13,7 @@ function App() {
   const [cart,setCart] = useState([]);
   const [activeTab,setActiveTab] = useState(0);
 
+
   function addToCart(beerObj) {
     setCart([...cart,beerObj]);
   }
@@ -28,6 +29,10 @@ function App() {
 
   function deleteBeer(beerToDelete){
     setCart(cart.filter((cartBeer)=> cartBeer.id !== beerToDelete.id))
+  }
+
+  function handleNewBeer(newBeerObj){
+    setBeers([...beers, newBeerObj]);
   }
 
   useEffect(() => {
@@ -55,7 +60,7 @@ function App() {
             <Beers beers={searchResults} setSearchQuery={setSearchQuery} addToCart={addToCart}/>
           </Route>
           <Route exact path="/addbeer">
-            <BeerForm />
+            <BeerForm onHandleNewBeer={handleNewBeer}/>
           </Route>
           <Route exact path="/checkout">
             <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer} sendActiveTab={sendActiveTab}/>
