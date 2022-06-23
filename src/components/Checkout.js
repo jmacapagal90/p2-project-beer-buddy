@@ -4,7 +4,7 @@ import BeerCard from "./BeerCard";
 
 function Checkout({cart,activeTab,deleteBeer,clearCart, sendActiveTab}){
   //if you havent opened a tab yet or added to existing tab, in checkout, if tab is null, create an alert asking to create a tab
-
+  console.log(activeTab)
   function checkoutCart(){
     
     fetch(`https://sheltered-beach-53138.herokuapp.com/openTabs/${activeTab.id}`, {

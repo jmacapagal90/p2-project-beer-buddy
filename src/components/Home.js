@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Input, Dropdown, Header, Form, Button, Image} from "semantic-ui-react";
 
 function Home({sendActiveTab,openTabs}) {
-
+    
     const openTabDisplay = (openTabs ? openTabs.map((tab)=>{
         return {
             key: tab.id,
@@ -37,7 +37,7 @@ function Home({sendActiveTab,openTabs}) {
 
     function selectOpenTab(e){
         const tabFilter = openTabs.filter((tab)=> tab.tabName === e.target.textContent)[0]
-        sendActiveTab({id: tabFilter.id, name: tabFilter.tabName, beersOrdered: tabFilter.beersOrdered})
+        sendActiveTab({id: tabFilter.id, tabName: tabFilter.tabName, beersOrdered: tabFilter.beersOrdered})
     }
 
     return (
