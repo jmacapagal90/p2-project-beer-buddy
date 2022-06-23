@@ -20,12 +20,19 @@
 
 
 ## Features
+
+Tabs:
 - create a new tab
-- update an exisiting tab
-- grabs list of beers through beer api
+- choose from exisiting tabs
+- add beers to tab
+- delete the tab
+
+Beers:
+- get list of beers from database
 - filter through list of beers by name
 - add beers to cart 
-- place order > makes a patch request to our db with the list of beers ordered 
+- remove beers from cart
+- add new beer to database
 
 
 ## Site
@@ -56,8 +63,9 @@ Dependencies are listed inside the package.json file
 Room for improvement:
 - improvement db functionality
 - import more beer types other than ale
-- display items in cart and total cost
+- display total cost
 - filter by price
+- sort features
 - improve css styling 
 
 
