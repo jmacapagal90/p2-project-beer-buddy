@@ -88,7 +88,13 @@ function App() {
             <CloseTab activeTab={activeTab} onDeleteTab={handleDeleteTab}/>
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart} clearCart={clearCart} activeTab={activeTab} deleteBeer={deleteBeer} sendActiveTab={sendActiveTab}/>
+            <Checkout 
+            cart={cart} 
+            clearCart={clearCart} 
+            activeTab={activeTab} 
+            deleteBeer={deleteBeer} 
+            sendActiveTab={sendActiveTab}
+            />
           </Route>
         </Switch>
       </>
