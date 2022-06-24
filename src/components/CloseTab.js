@@ -18,7 +18,7 @@ function CloseTab({activeTab,onDeleteTab}){
     }
     return (
         <Container >
-        <Header>Active Tab: {tabName}</Header>
+            <Header>Active Tab: {tabName}</Header>
             {beersOrdered.length !== 0 ? 
                 beersOrdered.map((beer)=>{
                 return (
@@ -28,7 +28,7 @@ function CloseTab({activeTab,onDeleteTab}){
                     </List>
                 )
             }): null}
-        <Button type="submit" onClick={handleCloseTab}>Close Tab</Button>
+            <Button type="submit" onClick={handleCloseTab}>Close Tab</Button>
         </Container>       
     )
 }
