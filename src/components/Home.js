@@ -1,8 +1,9 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import {Container, Input, Dropdown, Header, Form, Button, Image} from "semantic-ui-react";
 
 function Home({sendActiveTab,openTabs}) {
-    
+    const history = useHistory()
     const openTabDisplay = (openTabs ? openTabs.map((tab)=>{
         return {
             key: tab.id,
@@ -33,11 +34,13 @@ function Home({sendActiveTab,openTabs}) {
           .catch((error) => {
             console.error('Error:', error);
           });
+          history.push('/beers')
         }
 
     function selectOpenTab(e){
         const tabFilter = openTabs.filter((tab)=> tab.tabName === e.target.textContent)[0]
         sendActiveTab({id: tabFilter.id, tabName: tabFilter.tabName, beersOrdered: tabFilter.beersOrdered})
+        history.push('/beers')
     }
 
     return (
@@ -47,7 +50,7 @@ function Home({sendActiveTab,openTabs}) {
             <Form onSubmit={(e)=>submitNewTab(e)}>
                 <Header as='h4'>Add A New Tab</Header>
                 <Input type="text" name="name" placeholder="Tab Name"/>
-                <Button type="submit">Open Tab</Button>
+                <Button type="submit" >Open Tab</Button>
             </Form>
             <Header as='h4'>Update Tab</Header>
             <Dropdown 
