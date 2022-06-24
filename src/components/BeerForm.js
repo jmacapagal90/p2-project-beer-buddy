@@ -30,7 +30,7 @@ function BeerForm({onHandleNewBeer}){
           })
           .then(response => response.json())
           .then(data => 
-            console.log(data)
+            onHandleNewBeer(data)
           )
           .catch((error) => {
             console.error('Error:', error);
